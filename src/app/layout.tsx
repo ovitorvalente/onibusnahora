@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import { NavegationBarComponent } from "@/components/navegation-bar";
+import { HeaderBarComponent } from "@/components/header-bar";
 
 // Fontes personalizadas
 const geistSans = Geist({
@@ -44,7 +45,7 @@ export default function RootLayout({
   return (
     <html lang="pt-br" suppressHydrationWarning>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} min-h-screen bg-zinc-100 antialiased dark:bg-zinc-950`}
+        className={`${geistSans.variable} ${geistMono.variable} bg-zinc-100 antialiased dark:bg-zinc-950`}
       >
         <ThemeProvider
           attribute="class"
@@ -52,6 +53,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
+          <HeaderBarComponent />
           {children}
           <NavegationBarComponent />
         </ThemeProvider>
