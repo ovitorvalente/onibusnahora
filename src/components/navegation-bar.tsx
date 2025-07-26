@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 import { Button } from "./ui/button";
-import { Bell, House, Map } from "lucide-react";
+import { House, Map, Settings, Star } from "lucide-react";
 import Link from "next/link";
 
 const navegationBarOptions = [
@@ -10,16 +10,21 @@ const navegationBarOptions = [
     label: "Home",
     active: "home",
   },
+  // {
+  //   icon: <Map />,
+  //   label: "Localização",
+  //   active: "location",
+  // },
   {
-    icon: <Map />,
-    label: "Localização",
-    active: "location",
+    icon: <Star />,
+    label: "Favoritos",
+    active: "favorites",
   },
-  {
-    icon: <Bell />,
-    label: "Notificações",
-    active: "notifications",
-  },
+  // {
+  //   icon: <Settings />,
+  //   label: "Configurações",
+  //   active: "settings",
+  // },
 ];
 export function NavegationBarComponent() {
   const [active, setActive] = useState("home");
